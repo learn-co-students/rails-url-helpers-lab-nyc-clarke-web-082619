@@ -1,0 +1,10 @@
+</p> <% if @student.active %>
+    <p><%= @student.to_s %> is currently active.</p>
+<% else %>
+    <p><%= @student.to_s %> is currently inactive.</p>
+<% end %>
+
+<%= form_for @student do |f| %>
+    <%= f.hidden_field :active, value: !@student.active %>
+    <%= f.submit "Toggle Active" %>
+<% end %>
